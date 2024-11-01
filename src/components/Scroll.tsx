@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
+import { useEffect } from "react";
 
 // styled -----
 const Wrapper = styled(motion.div)`
-  height: 100vh;
+  height: 200vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -20,21 +20,13 @@ const Box = styled(motion.div)`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.6);
 `;
 
-const BiggerBox = styled(motion.div)`
-  width: 600px;
-  height: 600px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-`;
-
 function Scroll() {
   const x = useMotionValue(0);
   const rotateZ = useTransform(x, [-800, 800], [-360, 360]);
-  useEffect(() => rotateZ.onChange(() => console.log(rotateZ.get())), [x]);
+  // useEffect(
+  //   () => rotateZ.onChange(() => console.log(rotateZ.get())),
+  //   [rotateZ]
+  // );
 
   const background = useTransform(
     x,
@@ -46,10 +38,16 @@ function Scroll() {
     ]
   );
 
+  const { scrollY, scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 5]);
+  useEffect(() => {
+    scrollY.onChange(() => console.log(scrollY.get(), scrollYProgress.get()));
+  }, [scrollY, scrollYProgress]);
+
   return (
     <>
       <Wrapper style={{ background }}>
-        <Box style={{ x, rotateZ }} drag="x" dragSnapToOrigin />
+        <Box style={{ x, rotateZ, scale }} drag="x" dragSnapToOrigin />
       </Wrapper>
     </>
   );
