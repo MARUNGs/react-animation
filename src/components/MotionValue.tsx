@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 // styled -----
 const Wrapper = styled(motion.div)`
@@ -20,21 +20,13 @@ const Box = styled(motion.div)`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.6);
 `;
 
-const BiggerBox = styled(motion.div)`
-  width: 600px;
-  height: 600px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-`;
-
 function MotionValue() {
   const x = useMotionValue(0);
   const rotateZ = useTransform(x, [-800, 800], [-360, 360]);
-  useEffect(() => rotateZ.onChange(() => console.log(rotateZ.get())), [x]);
+  useEffect(
+    () => rotateZ.onChange(() => console.log(rotateZ.get())),
+    [rotateZ]
+  );
 
   // 배경색상을 바꾸고 싶을 때는 rgb값으로 바꿀 것!
   const background = useTransform(
