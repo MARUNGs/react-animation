@@ -71,7 +71,7 @@ function GesturesAndDrag() {
             // ref 개념을 이용하여 처리가능(ref: 특정 요소와 바인딩할 수 있는 prop)
             dragConstraints={biggerBoxRef}
             // 드래그 이후 다시 정중앙으로 돌려보내기
-            // dragSnapToOrigin={}
+            // dragSnapToOrigin
             // dragElastic: 당기는 힘(default: 0.5) 0 ~ 1 설정가능
             dragElastic={0.5}
             variants={boxVars}

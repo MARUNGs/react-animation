@@ -1,6 +1,8 @@
 import { GlobalStyle } from "./styles/\bAppStyled";
-import Variants from "./components/Variants";
-import GesturesAndDrag from "./components/GesturesAndDrag";
+// import Variants from "./components/Variants";
+// import GesturesAndDrag from "./components/GesturesAndDrag";
+// import MotionValue from "./components/MotionValue";
+import Scroll from "./components/Scroll";
 
 // main
 function App() {
@@ -8,7 +10,9 @@ function App() {
     <>
       <GlobalStyle />
       {/* <Variants /> */}
-      <GesturesAndDrag />
+      {/* <GesturesAndDrag /> */}
+      {/* <MotionValue /> */}
+      <Scroll />
     </>
   );
 }
