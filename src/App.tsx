@@ -4,7 +4,9 @@ import { GlobalStyle } from "./styles/\bAppStyled";
 // import MotionValue from "./components/MotionValue";
 // import Scroll from "./components/Scroll";
 // import Svg from "./components/Svg";
-import AnimatePresenceBox from "./components/AnimatePresence";
+// import AnimatePresenceBox from "./components/AnimatePresence";
+// import LayerBox from "./components/Layer";
+import GridBox from "./components/GridBox";
 
 // main
 function App() {
@@ -16,7 +18,9 @@ function App() {
       {/* <MotionValue /> */}
       {/* <Scroll /> */}
       {/* <Svg /> */}
-      <AnimatePresenceBox />
+      {/* <AnimatePresenceBox /> */}
+      {/* <LayerBox /> */}
+      <GridBox />
     </>
   );
 }
