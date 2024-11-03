@@ -3,7 +3,8 @@ import { GlobalStyle } from "./styles/\bAppStyled";
 // import GesturesAndDrag from "./components/GesturesAndDrag";
 // import MotionValue from "./components/MotionValue";
 // import Scroll from "./components/Scroll";
-import Svg from "./components/Svg";
+// import Svg from "./components/Svg";
+import AnimatePresenceBox from "./components/AnimatePresence";
 
 // main
 function App() {
@@ -14,7 +15,8 @@ function App() {
       {/* <GesturesAndDrag /> */}
       {/* <MotionValue /> */}
       {/* <Scroll /> */}
-      <Svg />
+      {/* <Svg /> */}
+      <AnimatePresenceBox />
     </>
   );
 }
